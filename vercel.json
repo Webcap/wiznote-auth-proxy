@@ -2,8 +2,11 @@
   "headers": [
     {
       "source": "/auth/:path*",
+      "has": [
+        { "type": "header", "key": "origin" }
+      ],
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Origin", "value": "$header.origin" },
         { "key": "Vary", "value": "Origin" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Headers", "value": "authorization, apikey, content-type, x-client-info, x-profile-id, x-csrf-token" },
@@ -12,8 +15,11 @@
     },
     {
       "source": "/rest/:path*",
+      "has": [
+        { "type": "header", "key": "origin" }
+      ],
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Origin", "value": "$header.origin" },
         { "key": "Vary", "value": "Origin" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Headers", "value": "authorization, apikey, content-type, x-client-info, x-profile-id, x-csrf-token" },
@@ -35,12 +41,28 @@
       "destination": "https://kmzubtegjiexwugadyfw.supabase.co/auth/:path*"
     },
     {
+      "source": "/auth/:path*",
+      "has": [
+        { "type": "header", "key": "origin" },
+        { "type": "method", "value": "OPTIONS" }
+      ],
+      "destination": "/cors-options"
+    },
+    {
       "source": "/realtime/:path*",
       "destination": "https://kmzubtegjiexwugadyfw.supabase.co/realtime/:path*"
     },
     {
       "source": "/rest/:path*",
       "destination": "https://kmzubtegjiexwugadyfw.supabase.co/rest/:path*"
+    },
+    {
+      "source": "/rest/:path*",
+      "has": [
+        { "type": "header", "key": "origin" },
+        { "type": "method", "value": "OPTIONS" }
+      ],
+      "destination": "/cors-options"
     },
     {
       "source": "/.well-known/:path*",
