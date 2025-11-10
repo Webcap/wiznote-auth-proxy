@@ -3,19 +3,19 @@
   "rewrites": [
     {
       "source": "/auth/:path*",
-      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/auth/:path*"
+      "destination": "https://kmzubtegijexwguadyfw.supabase.co/auth/:path*"
     },
     {
       "source": "/realtime/:path*",
-      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/realtime/:path*"
+      "destination": "https://kmzubtegijexwguadyfw.supabase.co/realtime/:path*"
     },
     {
       "source": "/rest/:path*",
-      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/rest/:path*"
+      "destination": "https://kmzubtegijexwguadyfw.supabase.co/rest/:path*"
     },
     {
       "source": "/.well-known/:path*",
-      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/.well-known/:path*"
+      "destination": "https://kmzubtegijexwguadyfw.supabase.co/.well-known/:path*"
     }
   ]
 }
