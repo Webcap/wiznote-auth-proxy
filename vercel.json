@@ -1,8 +1,30 @@
 {
+  "headers": [
+    {
+      "source": "/auth/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://wiznote.app" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Headers", "value": "authorization, apikey, content-type, x-client-info, x-profile-id, x-csrf-token" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,PATCH,DELETE,OPTIONS" }
+      ]
+    },
+    {
+      "source": "/realtime/:path*",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://wiznote.app" },
+        { "key": "Access-Control-Allow-Credentials", "value": "true" }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/auth/:path*",
       "destination": "https://kmzubtegjiexwugadyfw.supabase.co/auth/:path*"
+    },
+    {
+      "source": "/realtime/:path*",
+      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/realtime/:path*"
     },
     {
       "source": "/.well-known/:path*",
