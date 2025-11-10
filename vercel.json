@@ -1,0 +1,13 @@
+{
+  "rewrites": [
+    {
+      "source": "/auth/:path*",
+      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/auth/:path*"
+    },
+    {
+      "source": "/.well-known/:path*",
+      "destination": "https://kmzubtegjiexwugadyfw.supabase.co/.well-known/:path*"
+    }
+  ]
+}
+
