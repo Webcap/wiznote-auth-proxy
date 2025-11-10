@@ -2,8 +2,15 @@
   "headers": [
     {
       "source": "/auth/:path*",
+      "has": [
+        {
+          "type": "header",
+          "key": "origin"
+        }
+      ],
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://wiznote.app" },
+        { "key": "Access-Control-Allow-Origin", "value": "$header.origin" },
+        { "key": "Vary", "value": "Origin" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Headers", "value": "authorization, apikey, content-type, x-client-info, x-profile-id, x-csrf-token" },
         { "key": "Access-Control-Allow-Methods", "value": "GET,POST,PUT,PATCH,DELETE,OPTIONS" }
@@ -12,7 +19,7 @@
     {
       "source": "/realtime/:path*",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://wiznote.app" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Credentials", "value": "true" }
       ]
     }
