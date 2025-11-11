@@ -47,15 +47,6 @@
       "source": "/.well-known/:path*",
       "destination": "https://kmzubtegijexwguadyfw.supabase.co/.well-known/:path*"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(auth|rest|storage|realtime)/.*",
-      "methods": [
-        "OPTIONS"
-      ],
-      "dest": "/api/cors-options.ts"
-    }
   ]
 }
 
