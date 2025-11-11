@@ -2,6 +2,78 @@
   "headers": [
     {
       "source": "/(auth|rest|storage|realtime)/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "origin",
+          "value": "http://localhost:8081"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "http://localhost:8081"
+        },
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token"
+        },
+        {
+          "key": "Access-Control-Max-Age",
+          "value": "86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Origin"
+        }
+      ]
+    },
+    {
+      "source": "/(auth|rest|storage|realtime)/(.*)",
+      "has": [
+        {
+          "type": "header",
+          "key": "origin",
+          "value": "http://127\\.0\\.0\\.1:8081"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "http://127.0.0.1:8081"
+        },
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token"
+        },
+        {
+          "key": "Access-Control-Max-Age",
+          "value": "86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Origin"
+        }
+      ]
+    },
+    {
+      "source": "/(auth|rest|storage|realtime)/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
@@ -17,11 +89,15 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "authorization, apikey, content-type, x-client-info, x-profile-id, x-csrf-token"
+          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token"
         },
         {
           "key": "Access-Control-Max-Age",
           "value": "86400"
+        },
+        {
+          "key": "Vary",
+          "value": "Origin"
         }
       ]
     }
