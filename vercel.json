@@ -1,5 +1,31 @@
 {
-  "headers": [],
+  "headers": [
+    {
+      "source": "/(auth|rest|storage|realtime)/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://wiznote.app"
+        },
+        {
+          "key": "Access-Control-Allow-Credentials",
+          "value": "true"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "authorization, apikey, content-type, x-client-info, x-profile-id, x-csrf-token"
+        },
+        {
+          "key": "Access-Control-Max-Age",
+          "value": "86400"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/auth/:path*",
@@ -14,8 +40,21 @@
       "destination": "https://kmzubtegijexwguadyfw.supabase.co/rest/:path*"
     },
     {
+      "source": "/storage/:path*",
+      "destination": "https://kmzubtegijexwguadyfw.supabase.co/storage/:path*"
+    },
+    {
       "source": "/.well-known/:path*",
       "destination": "https://kmzubtegijexwguadyfw.supabase.co/.well-known/:path*"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(auth|rest|storage|realtime)/.*",
+      "methods": [
+        "OPTIONS"
+      ],
+      "dest": "/api/cors-options.ts"
     }
   ]
 }
