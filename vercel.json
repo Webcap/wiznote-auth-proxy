@@ -24,7 +24,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token"
+          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token, x-supabase-api-version"
         },
         {
           "key": "Access-Control-Max-Age",
@@ -60,7 +60,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token"
+          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token, x-supabase-api-version"
         },
         {
           "key": "Access-Control-Max-Age",
@@ -89,7 +89,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token"
+          "value": "authorization, apikey, content-type, accept, accept-profile, content-profile, prefer, range, range-unit, x-client-info, x-profile-id, x-csrf-token, x-supabase-api-version"
         },
         {
           "key": "Access-Control-Max-Age",
